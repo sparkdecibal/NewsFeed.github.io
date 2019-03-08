@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsFeed</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="how-to-import">How to Import</h1>
+<ol>
+<li>First of all goto the location where you have placed NearBy code</li>
+<li>Please extract zip file in same location.</li>
+<li>Now select “<strong>Import Project (Gradle, Eclipse ADT, etc.)</strong>” from Android Studio.</li>
+<li>Browse location where you have placed NearBy Code and press “<strong>OK</strong>” button.</li>
+<li>Now wait till android studio complete the Importing project successfully</li>
+</ol>
+<p><img src="https://lh3.googleusercontent.com/dxPVXJN4WG2eKWDqWTVBNvlj1wWAw_2j46OXdD1D12j0djgSna_O38MLjDcEFNxinSZq418qGFU" alt="Import"></p>
+<h1 id="change-app-name">Change App name</h1>
+<p>App &gt; res &gt; values &gt; strings.xml</p>
+<pre><code>&lt;string name="app_name"&gt;NewsFeed&lt;/string&gt;
+</code></pre>
+<h2 id="change-app-colors">Change App colors</h2>
+<p>App &gt; res &gt; values &gt; colors.xml</p>
+<pre><code>&lt;color name="colorPrimary"&gt;#3F51B5&lt;/color&gt;&lt;color name="colorPrimaryDark"&gt;#303F9F&lt;/color&gt;&lt;color name="colorAccent"&gt;#8b2d4e&lt;/color&gt;&lt;color name="PrimaryTextColor"&gt;#4d5674&lt;/color&gt;&lt;color name="SecondaryTextColor"&gt;#99ABBD&lt;/color&gt;
+</code></pre>
+<h2 id="change-app-icon">Change App icon</h2>
+<p>Place your app icon inside mipmap folder -&gt; *<em>app\src\main\res\mipmap*</em></p>
+<p>Icon of the name should be <strong>"ic_launcher.png"</strong></p>
+<h2 id="change-app-package-name">Change App Package Name</h2>
+<p>Open App level build.gradle and change <strong>ApplicationId</strong> variable  inside <strong>android &gt; defaultConfig</strong></p>
+<pre><code>applicationId "com.sparkdecibal.newsfeed"
+</code></pre>
+<p>Change it with your package name</p>
+<h2 id="admob-configuration">Admob Configuration</h2>
+<p>Follow this link</p>
+<blockquote>
+<p><a href="https://developers.google.com/admob/android/quick-start">https://developers.google.com/admob/android/quick-start</a></p>
+</blockquote>
+<p>After creating banner ad unit and interstitial ad unit you have to place you adUnit id and interstitial id in string.xml file</p>
+<h1 id="onesignal-integration">OneSignal integration</h1>
+<p>Follow this link</p>
+<blockquote>
+<p><a href="https://documentation.onesignal.com/docs/android-sdk-setup">https://documentation.onesignal.com/docs/android-sdk-setup</a></p>
+</blockquote>
+<p>Place your OneSignal App ID in build.gradle(Module:app) file in the project</p>
+<pre><code>manifestPlaceholders = [onesignal_app_id : 'PLACE YOUR ONESIGNAL APP ID HERE', // Project number pulled from dashboard, local value is ignored. onesignal_google_project_number: 'REMOTE']
+</code></pre>
+</div>
+</body>
+
+</html>
