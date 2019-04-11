@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -9,45 +9,99 @@
 </head>
 
 <body class="stackedit">
-  <div class="stackedit__html"><h1 id="how-to-import">How to Import</h1>
+  <div class="stackedit__html"><h1 id="android---newsfeed"><em>Android - NewsFeed</em></h1>
+<h1 id="how-to--import">How to  Import</h1>
 <ol>
-<li>First of all goto the location where you have placed NearBy code</li>
-<li>Please extract zip file in same location.</li>
+<li>Navigate to the NewsFeed code and extract zip file.</li>
 <li>Now select “<strong>Import Project (Gradle, Eclipse ADT, etc.)</strong>” from Android Studio.</li>
-<li>Browse location where you have placed NearBy Code and press “<strong>OK</strong>” button.</li>
-<li>Now wait till android studio complete the Importing project successfully</li>
+<li>Browse NewsFeed Code and press “<strong>OK</strong>” button.</li>
+<li>Now wait for android studio to import the project.</li>
 </ol>
-<p><img src="https://lh3.googleusercontent.com/dxPVXJN4WG2eKWDqWTVBNvlj1wWAw_2j46OXdD1D12j0djgSna_O38MLjDcEFNxinSZq418qGFU" alt="Import"></p>
+<p><img src="https://lh3.googleusercontent.com/5B6LyLJVCZX8qRa5_lXhWgsAr239F0VwdkooSW1fmn_S0DWCyiUMkkVIWfZwgH-_DzIXbMp43yo" alt="enter image description here"></p>
+<h1 id="customizing-project"><em>Customizing Project</em></h1>
+<h1 id="project-structure">Project Structure</h1>
+<p>Within each Android app module, files are shown in the following groups:</p>
+<p><strong>manifest</strong><br>
+Contains the <a href="https://developer.android.com/guide/topics/manifest/manifest-intro.html"><code>AndroidManifest.xml</code></a> file.</p>
+<p><strong>java</strong></p>
+<p>Contains the Java source code files, separated by package names, including JUnit test code.</p>
+<p><strong>res</strong></p>
+<p>Contains all non-code resources, such as XML layouts, UI strings, and bitmap images, divided into corresponding sub-directories. For more information about all possible resource types, see <a href="https://developer.android.com/guide/topics/resources/providing-resources.html">Providing Resources</a>.</p>
+<p>To know more about project structure please go through this link <a href="https://developer.android.com/studio/projects/">Android Project Structure</a></p>
+<h1 id="change-api-key">Change API Key</h1>
+<p>Register and login into <a href="https://newsapi.org/register">here</a><br>
+Generate API key from above link</p>
+<p>After generating API key<br>
+<strong>Navigate to below path</strong></p>
+<p>App&gt;java&gt;utils&gt; AppConstants.java</p>
+<p>and replace your key at</p>
+<pre><code>public static final String KEY = "PUT YOUR KEY HERE";
+</code></pre>
 <h1 id="change-app-name">Change App name</h1>
-<p>App &gt; res &gt; values &gt; strings.xml</p>
+<p><strong>Navigate to below path</strong><br>
+App &gt; res &gt; values &gt; strings.xml</p>
+<p>Open strings.xml and change the app name by replacing “NewsFeed” to your app name.</p>
 <pre><code>&lt;string name="app_name"&gt;NewsFeed&lt;/string&gt;
 </code></pre>
 <h2 id="change-app-colors">Change App colors</h2>
-<p>App &gt; res &gt; values &gt; colors.xml</p>
-<pre><code>&lt;color name="colorPrimary"&gt;#3F51B5&lt;/color&gt;&lt;color name="colorPrimaryDark"&gt;#303F9F&lt;/color&gt;&lt;color name="colorAccent"&gt;#8b2d4e&lt;/color&gt;&lt;color name="PrimaryTextColor"&gt;#4d5674&lt;/color&gt;&lt;color name="SecondaryTextColor"&gt;#99ABBD&lt;/color&gt;
+<p><strong>Navigate to below path</strong><br>
+App &gt; res &gt; values &gt; colors.xml</p>
+<p>Open colors.xml and change the app color.</p>
+<pre><code>&lt;color name="colorPrimary"&gt;#3F51B5&lt;/color&gt;
+&lt;color name="colorPrimaryDark"&gt;#303F9F&lt;/color&gt;
+&lt;color name="colorAccent"&gt;#8b2d4e&lt;/color&gt;
+&lt;color name="PrimaryTextColor"&gt;#4d5674&lt;/color&gt;
+&lt;color name="SecondaryTextColor"&gt;#99ABBD&lt;/color&gt;
 </code></pre>
 <h2 id="change-app-icon">Change App icon</h2>
 <p>Place your app icon inside mipmap folder -&gt; *<em>app\src\main\res\mipmap*</em></p>
-<p>Icon of the name should be <strong>"ic_launcher.png"</strong></p>
+<p>Create two icons, one is square and another is round</p>
+<ol>
+<li>For square Icon name should be <strong>"ic_launcher.png"</strong></li>
+<li>For round Icon name should be <strong>"ic_launcher_round.png"</strong></li>
+</ol>
 <h2 id="change-app-package-name">Change App Package Name</h2>
 <p>Open App level build.gradle and change <strong>ApplicationId</strong> variable  inside <strong>android &gt; defaultConfig</strong></p>
 <pre><code>applicationId "com.sparkdecibal.newsfeed"
 </code></pre>
 <p>Change it with your package name</p>
 <h2 id="admob-configuration">Admob Configuration</h2>
-<p>Follow this link</p>
+<p><strong>How to create Ad Units</strong><br>
+Follow this link</p>
 <blockquote>
 <p><a href="https://developers.google.com/admob/android/quick-start">https://developers.google.com/admob/android/quick-start</a></p>
 </blockquote>
-<p>After creating banner ad unit and interstitial ad unit you have to place you adUnit id and interstitial id in string.xml file</p>
+<ol>
+<li>Sign into your <a href="https://apps.admob.com/">AdMob</a> account.</li>
+<li>Create a new App by giving the <strong>package name</strong> of your app to integrate AdMob. Once the App is created, you can find the <strong>APP ID</strong> on the dashboard which looks like <strong>ca-app-pub-XXXXXXXXX~XXXXXXXXX</strong>.</li>
+<li>Select the newly created App and click on <strong>ADD AD UNIT</strong> button to create a new ad unit.</li>
+<li>Select the <strong>ad format</strong> and give the ad unit a name.</li>
+<li>Once the ad unit is created, you can notice the <strong>Ad unit ID</strong> on the dashboard. An example of ad unit id look like <strong>ca-app-pub-066XXXXXXX/XXXXXXXXXXX</strong></li>
+<li>Now create banner and interstitial ad unit for your app.</li>
+</ol>
+<p>After creating banner ad unit and interstitial ad unit you have to place your adUnit id and interstitial id in strings.xml file</p>
+<p><strong>Open strings.xml and place your adUnit Id, banner id and interstitial id</strong></p>
+<pre><code>&lt;string name="admob_app_id"&gt;ca-app-pub-XXXXXXXX~XXXXXXXXXXX&lt;/string&gt;
+&lt;string name="banner_home_footer"&gt;ca-app-pub-XXXXXXXX~XXXXXXXXXXX&lt;/string&gt;
+&lt;string name="interstitial_full_screen"&gt;ca-app-pub-XXXXXXXX~XXXXXXXXXXX&lt;/string&gt;
+</code></pre>
 <h1 id="onesignal-integration">OneSignal integration</h1>
 <p>Follow this link</p>
 <blockquote>
 <p><a href="https://documentation.onesignal.com/docs/android-sdk-setup">https://documentation.onesignal.com/docs/android-sdk-setup</a></p>
 </blockquote>
 <p>Place your OneSignal App ID in build.gradle(Module:app) file in the project</p>
-<pre><code>manifestPlaceholders = [onesignal_app_id : 'PLACE YOUR ONESIGNAL APP ID HERE', // Project number pulled from dashboard, local value is ignored. onesignal_google_project_number: 'REMOTE']
+<pre><code>manifestPlaceholders = [onesignal_app_id : 'PLACE YOUR ONESIGNAL APP ID HERE',
+// Project number pulled from dashboard, local value is ignored.
+onesignal_google_project_number: 'REMOTE']
 </code></pre>
+<p>Now open this link</p>
+<blockquote>
+<p><a href="https://console.firebase.google.com/?pli=1">https://console.firebase.google.com/?pli=1</a></p>
+</blockquote>
+<p>Create project and download google-service.json file</p>
+<p>Replace your generated google-service.json inside <strong>App Directory in project</strong></p>
+<p><img src="https://lh3.googleusercontent.com/Ns1TBZo1lpUjEHokQS-luOGUdPBjFaeRioSSjBV82Dlt9L7TlzkXJMCg-N_yQbB88BryYQGs26Y" alt="enter image description here"></p>
 </div>
 </body>
 
